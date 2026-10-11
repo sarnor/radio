@@ -1,0 +1,2 @@
+(()=>{"use strict";let s,a,i,n;n=window.matchMedia("(pointer: coarse)").matches,a='\n<div class="pause-element">\n<span>\n<i class="fa-regular fa-pause"></i>\n</span>\n</div>',s='<div class="ch">\n<div class="show menu-icon">\n<i class="fa-solid fa-bars"></i>\n</div>\n<div class="hide menu-icon">\n<i class="fa-solid fa-xmark"></i>\n</div>\n</div>',i=new Audio})();
+//# sourceMappingURL=index.js.map
