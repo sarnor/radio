@@ -41,7 +41,7 @@ body {
         grid-template-rows: 100px 1fr;
 
         header {
-            background-color: brown;
+            background-color: rgb(245, 13, 13);
             display: flex;
             justify-content: space-around;
             align-items: center;
