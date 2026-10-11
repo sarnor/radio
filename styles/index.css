@@ -34,67 +34,7 @@ body {
     background-color: var(--mainBackgroundColor);
     color: var(--mainTextColor);
 
-    & #root {
-        min-height: 100dvh;
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 100px 1fr;
 
-        header {
-            background-color: rgb(245, 13, 13);
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            padding: 15px 5px;
-
-            h1 {
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            div {
-                a {
-                    svg {
-                        color: aliceblue;
-                        font-size: 45px;
-                    }
-                }
-            }
-        }
-
-        main {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            justify-content: center;
-            align-items: center;
-
-            div {
-                width: 50px;
-                height: 50px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                border: 1px solid brown;
-                color: brown;
-
-                &.name {
-                    width: 500px;
-                    font-size: 25px;
-                }
-
-                &.play {
-                    cursor: pointer;
-
-                    svg {
-                        font-size: 45px;
-                        color: brown;
-                    }
-                }
-            }
-        }
-    }
 }
 canvas {
   top: 0;
@@ -105,6 +45,55 @@ canvas {
   display: block;
   position: fixed;
   inset: 0;
+}
+#root {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100px 1fr;
+}
+#root header {
+  background-color: #f50d0d;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px 5px;
+}
+#root header h1 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#root header div a svg {
+  color: aliceblue;
+  font-size: 45px;
+}
+#root main {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+#root main div {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid brown;
+  color: brown;
+}
+#root main div.name {
+  width: 500px;
+  font-size: 25px;
+}
+#root main div.play {
+  cursor: pointer;
+}
+#root main div.play svg {
+  font-size: 45px;
+  color: brown;
 }
 
 
