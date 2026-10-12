@@ -1,25 +1,3 @@
-:root {
-    --mainBackgroundColor: #272727;
-    --mainTextColor: #ffffff
-}
-
-.ns {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-.s {
-    -webkit-touch-callout: text;
-    -webkit-user-select: text;
-    -khtml-user-select: text;
-    -moz-user-select: text;
-    -ms-user-select: text;
-    user-select: text;
-}
 * {
     margin: 0;
     padding: 0;
@@ -31,69 +9,36 @@ html,
 body {
     min-height: 100dvh;
     max-width: 100dvw;
-    background-color: var(--mainBackgroundColor);
-    color: var(--mainTextColor);
-
-
+    background-color: #272727;
+    color: white;
 }
-canvas {
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 80;
-  display: block;
-  position: fixed;
-  inset: 0;
-}
+
 #root {
-  min-height: 100dvh;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 100px 1fr;
+    min-height: 100dvh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 1fr;
+
 }
-#root header {
-  background-color: #f50d0d;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 15px 5px;
-}
-#root header h1 {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-#root header div a svg {
-  color: aliceblue;
-  font-size: 45px;
-}
+
 #root main {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
 }
+
 #root main div {
-  width: 50px;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid brown;
-  color: brown;
-}
-#root main div.name {
-  width: 500px;
-  font-size: 25px;
-}
-#root main div.play {
-  cursor: pointer;
-}
-#root main div.play svg {
-  font-size: 45px;
-  color: brown;
+    width: 300px;
+    height: 50px;
+    border-radius: 7px;
+    border: 1px solid brown;
+    text-align: center;
+    align-content: center;
+    font-size: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    cursor: pointer;
 }
 
 
