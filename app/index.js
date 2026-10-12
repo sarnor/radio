@@ -1,2 +1,0 @@
-(() => { "use strict"; let e = document.querySelector(".play"), o = document.querySelector(".stop"); const t = new Audio; t.src = "https://rusradio.hostingradio.ru/rusradio96.aacp", e.addEventListener("click", () => { console.log(e), t.play() }), o.addEventListener("click", () => { console.log(o), t.pause() }) })();
-//# sourceMappingURL=index.js.map
