@@ -18,16 +18,7 @@ body {
     background-color: #272727;
     color: white;
 
-    canvas {
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: 5;
-        display: block;
-        position: fixed;
-        inset: 0;
-    }
+
 
     #root {
         min-height: 100dvh;
@@ -44,6 +35,11 @@ body {
             align-items: center;
             justify-content: flex-start;
             gap: 15px;
+
+            canvas {
+                display: block;
+                inset: 0;
+            }
 
             div {
                 margin-top: 15px;
