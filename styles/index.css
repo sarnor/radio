@@ -39,6 +39,11 @@ body {
             canvas {
                 display: block;
                 inset: 0;
+
+
+                &[hidden] {
+                    display: none !important;
+                }
             }
 
             div {
