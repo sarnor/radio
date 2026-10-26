@@ -1,4 +1,24 @@
 
+:root {
+    --main-gr: radial-gradient(at center top, #03459d 50%, #047af0 100%);
+    --main-new-gr: linear-gradient(to bottom, rgba(255, 255, 255, 0.55) 0%, rgba(0, 0, 0, 0.55) 100%), radial-gradient(at top center, rgba(255, 255, 255, 0.40) 0%, rgba(0, 0, 0, 0.40) 120%) #049ef7;
+    --main-color: #f6f6f6;
+}
+
+
+
+@keyframes ggg {
+    to {
+        --deg: 360deg;
+    }
+}
+
+@property --deg {
+    syntax: '<angle>';
+    inherits: true;
+    initial-value: 0deg;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -20,14 +40,41 @@ body {
 
 
 
+
     #root {
         min-height: 100dvh;
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 100px 1fr 100px;
         position: relative;
-        z-index: 10;
-        color: rgb(4, 210, 247);
+        z-index: 1;
+        background: var(--main-gr);
+        background-blend-mode: multiply, multiply;
+        color: var(--main-color);
+
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+
+            h1 {
+                padding: 5px;
+
+            }
+
+            button {
+                align-items: flex-end;
+                min-width: 100px;
+                border: 2px solid currentColor;
+                background-color: transparent;
+                color: currentColor;
+                border-radius: 5px;
+                cursor: pointer;
+                padding: 5px;
+            }
+        }
 
         main {
             display: flex;
@@ -35,6 +82,43 @@ body {
             align-items: center;
             justify-content: flex-start;
             gap: 15px;
+            background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255, 255, 255, 0.40) 0%, rgba(0, 0, 0, 0.25) 200%);
+            background-blend-mode: multiply;
+
+            .box {
+                background-color: #0e2136;
+                color: #142d4a;
+                height: 200px;
+                aspect-ratio: 1/1;
+                border-radius: 10px;
+                position: relative;
+
+
+
+                &::after,
+                &::before {
+                    content: "";
+                    position: absolute;
+                    inset: 0;
+                    background-image: conic-gradient(from var(--deg) at center, #04bdde, #f2046b, #f2046b, #04bdde);
+                    z-index: -2;
+                    padding: 10px;
+                    border-radius: inherit;
+                    animation: ggg 2s linear infinite;
+                }
+
+                &::before {
+                    filter: blur(10px);
+                }
+            }
+
+
+            .name {
+                border: none;
+                border-radius: 0;
+
+                border-bottom: 1px solid currentColor;
+            }
 
             div {
                 margin-top: 15px;
@@ -49,7 +133,20 @@ body {
                 font-size: 25px;
                 font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
-                &#radar {}
+                &#radar {
+                    opacity: 0;
+                    transition: all 1s;
+                    border: none;
+                    border-radius: 0;
+                    border-bottom: 1px solid currentColor;
+                    height: 80px;
+                    background-color: #09203f;
+                    padding: 5px;
+
+                    &.active {
+                        opacity: 1;
+                    }
+                }
 
                 &.buttons-parent {
                     display: flex;
@@ -84,19 +181,89 @@ body {
                 color: currentColor;
             }
         }
+    }
+}
 
-        footer {
-            display: grid;
-            place-items: center;
+@media (width < 991px) {
+    body {
+        #root {
+            main {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 15px;
 
-            button {
 
-                min-width: 200px;
-                border: 2px solid currentColor;
-                background-color: transparent;
-                color: currentColor;
-                border-radius: 5px;
-                cursor: pointer;
+
+                .name {
+                    border: none;
+                    border-radius: 0;
+
+                    border-bottom: 1px solid currentColor;
+                }
+
+                div {
+                    margin-top: 15px;
+                    padding: 5px 10px;
+                    min-width: 300px;
+
+                    border-radius: 7px;
+                    color: currentColor;
+                    border: 1px solid currentColor;
+                    text-align: center;
+                    align-content: center;
+                    font-size: 25px;
+                    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+                    &#radar {
+                        opacity: 0;
+                        transition: all 1s;
+                        border: none;
+                        border-radius: 0;
+                        border-bottom: 1px solid currentColor;
+                        height: 80px;
+                        background-color: #09203f;
+                        padding: 5px;
+
+                        &.active {
+                            opacity: 1;
+                        }
+                    }
+
+                    &.buttons-parent {
+                        display: flex;
+
+                        justify-content: center;
+                        align-items: center;
+                        flex-wrap: wrap;
+                        gap: 35px;
+                        padding: 5px 35px;
+
+                        border: none;
+
+                        button {
+                            width: 60px;
+
+                            border-radius: 5px;
+                            color: currentColor;
+                        }
+                    }
+                }
+
+                button {
+                    background-color: transparent;
+                    width: 100px;
+
+                    border-radius: 7px;
+                    border: 1px solid currentColor;
+                    text-align: center;
+                    align-content: center;
+                    font-size: 25px;
+                    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                    cursor: pointer;
+                    color: currentColor;
+                }
             }
         }
     }
