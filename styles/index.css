@@ -51,7 +51,7 @@ body {
         /* background: var(--main-gr);
         background-blend-mode: multiply, multiply;
         color: var(--main-color); */
-        background-image: url(./src/images/jpg/girls/17.jpg);
+        background-image: url(../src/images/jpg/girls/17.jpg);
         background-repeat: no-repeat;
         background-position: 50%;
         background-size: contain;
